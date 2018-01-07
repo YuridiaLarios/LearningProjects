@@ -2,7 +2,12 @@ body{
   background: #fcfafc;
 }
 
+
 .inside-container{
   height: 500px;
   background: #623973;
+}
+
+.logo{
+  margin: 2% auto;
 }
