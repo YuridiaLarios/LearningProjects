@@ -209,3 +209,79 @@ a:active {
         border-bottom-right-radius: 37px;
     }
 }
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow:400,600');
+
+body{
+  background: #fcfafc;
+}
+
+
+.inside-container{
+  height: auto;
+  background: #623973;
+}
+
+.logo{
+  margin: 2% auto;
+  width: 50%;
+}
+
+.btn-group{
+  margin-top: 2%;
+}
+
+.btn {
+  height: 40px;
+  cursor: pointer;
+  background: #623973;
+  border: red;
+  border-bottom: 4px solid #fcfafc;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.5em;
+  color: #fcfafc;
+}
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
+  font-weight: bold;
+  background: #fcfafc;
+  border-bottom: transparent;
+  color: #623973;
+}
+
+.btn:hover{
+  opacity: .6;
+}
+
+.thumbnails{
+  margin-top: 5%;
+  margin-left: -1.5%;
+}
+
+.thumbnail{
+  padding: 0px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.stream{
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.avatar{
+  width: 35%;
+  border: 10px solid #dd3333;
+  float: left;
+}
+
+.live{
+  border: 10px solid #33cc33;
+}

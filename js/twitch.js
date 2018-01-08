@@ -35,17 +35,12 @@ $(document).ready(function() {
   var twitchUsersData = [];
   var streamStatus = '';
   var MAX_INFO = 45;
-  var refreshRate = 300000;
+  var refreshRate = 900000;
   var active = 'all';
   var twitchLogo = 'http://2am.ninja/twitch/img/GlitchIcon_WhiteonPurple.png';
 
-  function loading() {
-    $("#results").html('<div class="loading"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>');
-  }
-
   function getStatus() {
     $("#results").empty();
-    loading();
     twitchUsersData = [];
 
     twitchUsers.forEach(function(user) {
@@ -257,18 +252,6 @@ $(document).ready(function() {
     });
   });
 
-  $('input[type="search"]').keyup(function() {
-    var search = $(this).val().toLowerCase();
-    var results = twitchUsersData.filter(function(who) {
-      return (who.name.toLowerCase().indexOf(search) != -1);
-    });
-
-    $("#results").empty();
-    twitchUsersData.sort(sortList);
-    results.forEach(function(who) {
-      showUserData(who);
-    });
-  });
 
   getStatus();
 
