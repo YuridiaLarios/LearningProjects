@@ -1,14 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow:400,600');
+
 body{
   background: #fcfafc;
 }
 
 
 .inside-container{
-  height: 500px;
+  height: auto;
   background: #623973;
 }
 
 .logo{
   margin: 2% auto;
   width: 50%;
+}
+
+.btn-group{
+  margin-top: 2%;
+}
+
+.btn {
+  height: 40px;
+  cursor: pointer;
+  background: #623973;
+  border: transparent;
+  border-bottom: 4px solid #fcfafc;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.5em;
+  color: #fcfafc;
+}
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
+  font-weight: bold;
+  background: #fcfafc;
+  border-bottom: transparent;
+  color: #623973;
+}
+
+.btn:hover{
+  opacity: .6;
+}
+
+.thumbnails{
+  margin-top: 5%;
 }
