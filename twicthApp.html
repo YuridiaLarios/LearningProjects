@@ -18,17 +18,19 @@
             <img class="logo float-center" src="images/twitch-logo.png" alt="twitch logo">
           </div>
           <div class="container rounded inside-container">
-            <div class="btn-group btn-group-justified btn-group-toggle rounded" data-toggle="buttons">
-              <label class="btn btn-default active">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> All
-              </label>
-              <label class="btn btn-default">
-                <input type="radio" name="options" id="option2" autocomplete="off"> Online
-              </label>
-              <label class="btn btn-default">
-                <input type="radio" name="options" id="option3" autocomplete="off"> Offline
-              </label>
-            </div>
+            <nav>
+              <div class="btn-group btn-group-justified btn-group-toggle rounded" data-toggle="buttons">
+                <label class="btn btn-default active">
+                  <input type="radio" name="options" id="all" autocomplete="off" checked> All
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="options" id="online" autocomplete="off"> Online
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="options" id="offline" autocomplete="off"> Offline
+                </label>
+              </div>
+            </nav>
 
             <!-- Thumbnails -->
             <div class="container thumbnails">
@@ -45,6 +47,13 @@
                   </div>
                   </div>
               </div>
+
+
+              <div id="streamers">
+
+              </div>
+
+
               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-row">
                 <div class="thumbnail">
                   <img src="images/cat.jpg" alt="..." class="stream">
@@ -79,6 +88,42 @@
                   </div>
                 </div>
               </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-row">
+                <div class="thumbnail">
+                  <img src="images/cat.jpg" alt="..." class="stream">
+                  <div class="caption">
+                    <img src="images/unicorn.jpg" class="img-circle avatar" alt="...">
+                    <h3>Meatball Sub Testing Long Name</h3>
+                    <h4>Name of current streaming</h4>
+                    <h5>Live Viewers</h5>
+                    <p><a href="#" class="btn btn-primary" role="button">Add to Cart</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-row">
+                <div class="thumbnail">
+                  <img src="images/cat.jpg" alt="..." class="stream">
+                  <div class="caption">
+                    <img src="images/unicorn.jpg" class="img-circle avatar" alt="...">
+                    <h3>Meatball Sub Testing Long Name</h3>
+                    <h4>Name of current streaming</h4>
+                    <h5>Live Viewers</h5>
+                    <p><a href="#" class="btn btn-primary" role="button">Add to Cart</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-row">
+                <div class="thumbnail">
+                  <img src="images/cat.jpg" alt="..." class="stream">
+                  <div class="caption">
+                    <img src="images/unicorn.jpg" class="img-circle avatar" alt="...">
+                    <h3>Meatball Sub Testing Long Name</h3>
+                    <h4>Name of current streaming</h4>
+                    <h5>Live Viewers</h5>
+                    <p><a href="#" class="btn btn-primary" role="button">Add to Cart</a></p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -87,5 +132,6 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/twitch.js"></script>
   </body>
 </html>
