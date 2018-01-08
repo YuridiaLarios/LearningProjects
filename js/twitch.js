@@ -20,8 +20,6 @@ $(document).ready(function() {
     "RobotCaleb",
     "noobs2ninjas",
     "pink_sparkles",
-    "comster404",
-    "brunofin",
     "medrybw",
     "monstercat",
     "aces_tv",
