@@ -6,7 +6,7 @@ $(document).ready(function() {
   // URL for Twitch TV Channels
   var URL_Channel = 'https://api.twitch.tv/kraken/channels/';
 
-  var callbak = '?callback=?&client_id=j15r3tcqv1ies1opd4ve46kq74106un';
+  var callbak = '?callback=?&client_id=bxg83rr6a85bmrfvozwhesgn5holhk';
 
   // sample Twitch TV Users
 
