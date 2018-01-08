@@ -47,12 +47,19 @@ body{
 
 .thumbnail{
   padding: 0px;
-  
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.stream{
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .avatar{
   width: 35%;
   border: 10px solid #dd3333;
+  float: left;
 }
 
 .live{
