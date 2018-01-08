@@ -23,7 +23,7 @@ body{
   height: 40px;
   cursor: pointer;
   background: #623973;
-  border: transparent;
+  border: red;
   border-bottom: 4px solid #fcfafc;
   font-family: 'Archivo Narrow', sans-serif;
   font-size: 1.5em;
@@ -42,4 +42,19 @@ body{
 
 .thumbnails{
   margin-top: 5%;
+  margin-left: -1.5%;
+}
+
+.thumbnail{
+  padding: 0px;
+  
+}
+
+.avatar{
+  width: 35%;
+  border: 10px solid #dd3333;
+}
+
+.live{
+  border: 10px solid #33cc33;
 }
