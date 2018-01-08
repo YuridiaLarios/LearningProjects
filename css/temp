@@ -4,26 +4,25 @@ body{
   background: #fcfafc;
 }
 
+.logo{
+  margin: 2% auto;
+  width: 50%;
+}
 
 .inside-container{
   height: auto;
   background: #623973;
 }
 
-.logo{
-  margin: 2% auto;
-  width: 50%;
-}
-
 .btn-group{
-  margin-top: 2%;
+  margin-top: 4%;
 }
 
 .btn {
   height: 40px;
   cursor: pointer;
   background: #623973;
-  border: red;
+  border: transparent;
   border-bottom: 4px solid #fcfafc;
   font-family: 'Archivo Narrow', sans-serif;
   font-size: 1.5em;

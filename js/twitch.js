@@ -11,13 +11,12 @@ $(document).ready(function() {
   // sample Twitch TV Users
 
   var twitchUsers = [
+    "Nintendo",
     "ESL_SC2",
     "ESL_CSGO",
     "OgamingSC2",
     "cretetion",
     "freecodecamp",
-    "storbeck",
-    "habathcx",
     "RobotCaleb",
     "noobs2ninjas",
     "pink_sparkles",
@@ -28,7 +27,6 @@ $(document).ready(function() {
     "aces_tv",
     "loserfruit",
     "behkuhtv",
-    "fakename",
     "food"
   ];
 
@@ -130,53 +128,61 @@ $(document).ready(function() {
   function showUserData(who) {
 
     var html = '';
-    html += '<div class="col-xs-12 col-md-6 col-lg-4">';
+    html += '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-row">';
+    html += '<div class="thumbnail">'
+    //PENDING
+    // html += '<img class="stream" alt="..." src="'+who.name+'">';
+    html += '<div class="infocard stream" id="infocard_' + who.name + '">';
+    html += '</div>'; // end of "infocard aka back image"
 
-    if (who.url !== null) {
-      html += '<a href="' + who.url + '" target="_blank">';
-    }
 
-    html += '<div class="infocard" id="infocard_' + who.name + '">';
-
+    //CAPTION
+    html += '<div class="caption">';
+        // LOGO
     if ((who.logo === null) || (who.logo === undefined)) {
       userLogo = 'http://2am.ninja/twitch/img/unknown.png';
     } else {
       userLogo = who.logo;
     }
-
+    // LOGO LIVE/OFF STATUS
     if (who.streaming) {
       streamStatus = 'stream-on';
     } else {
       streamStatus = 'stream-off';
     }
 
+    // LOGO
     html += '<img class="logo ' + streamStatus + '" src="' + userLogo + '" alt="">';
-
+    // USERNAME
     if (who.url !== null) {
       html += '<div class="play"><i class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i></div>';
     }
-
-    html += '<div class="info"><ul>';
-
+    // USERNAME PAGE LINK
+    if (who.url !== null) {
+      html += '<a href="' + who.url + '" target="_blank">';
+    }
+    //USERNAME
     var displayName = who.displayName;
     if (who.displayName === undefined) {
       displayName = who.name;
     }
-    html += '<li"><span class="name">' + displayName + '</span></li>';
+    html += '<h3>' + displayName + '</h3>';
 
+    // GAME INFO
     if (who.info !== null) {
-      html += '<li class="smaller">' + truncate(who.info, MAX_INFO) + '</li>';
+      html += '<h4>' + truncate(who.info, MAX_INFO) + '</h4>';
     }
-
+    // GAME INFO
     var game = "";
     if (who.game !== null) {
       game = who.game;
     }
     if (who.streaming) {
-      html += '<li class="smaller2">' + game + '&nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ' + who.viewers + '</li>';
+      html += '<h5>' + game + '&nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ' + who.viewers + '</h5>';
     }
-    html += '</ul></div>';
     html += '</div>';
+    html += '</div>';
+    html += '</img>';
     html += '</a>';
     html += '</div>';
 
