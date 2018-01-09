@@ -89,3 +89,23 @@ img.stream-on {
 img.stream-off {
     border-color: #dd3333;
 }
+
+/* No greater than 900px, no less than 400px */
+@media (max-width:768px) and (min-width:500px) {
+  .inside-container {
+    padding: 20px 50px;
+    margin: auto 50px;
+  }
+
+  .thumbnail{
+    height: 410px;
+  }
+  .infocard {
+      height: calc(400/16*9px);
+  }
+
+}​
+
+
+
+500 767
