@@ -212,7 +212,8 @@ $(document).ready(function() {
     html += '</div>';
 
     // apend info to our results div
-    $("#results").append(html);
+    $("#results").hide().append(html).fadeIn("500");
+
 
     // preview attached
     if (who.preview !== null && who.preview !== 'twitch') {
@@ -311,6 +312,9 @@ $(document).ready(function() {
       showUserData(who);
     });
   });
+
+
+
 
   // MAIN PROGRAM
   getStatus();
