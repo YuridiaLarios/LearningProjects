@@ -34,6 +34,7 @@ $(document).ready(function() {
   var MAX_INFO = 45; // cut info to 45 words
   var refreshRate = 900000; // refresh every 9 minutes
   var active = 'all';
+  var videoLink = "http://player.twitch.tv/?channel=";
 
 
 
@@ -163,8 +164,11 @@ $(document).ready(function() {
     html += '<div class="thumbnail">'
     // background image or preview div
     html += '<div class="infocard stream" id="infocard_' + who.name + '">';
+    if (who.streaming) {
+      html += '<iframe id="myIframe" class="embed-responsive-item" src="'+ videoLink + who.name +'&data-paused=true&muted=true&autoplay=false&"';
+      html += 'height="100%" width="100%" frameborder="0" scrolling="no"muted="true" allowfullscreen></iframe>';
+    }
     html += '</div>'; // end of "infocard aka back image"
-
 
     // CHANNEL PAGE LINK surrounding caption to make it all clickable
     if (who.url !== null) {
@@ -184,6 +188,7 @@ $(document).ready(function() {
     } else {
       streamStatus = 'stream-off';
     }
+
     // LOGO: either live or off class and picture of logo
     html += '<img class="logo ' + streamStatus + '" src="' + userLogo + '" alt="">';
     //USERNAME
@@ -312,9 +317,6 @@ $(document).ready(function() {
       showUserData(who);
     });
   });
-
-
-
 
   // MAIN PROGRAM
   getStatus();
