@@ -11,20 +11,22 @@ $(document).ready(function() {
   // Twitch TV Users
   var twitchUsers = [
     "Nintendo",
+    "ClashRoyale",
+    "ClashOfClans",
+    "Sodapoppin",
+    "KittyPlaysGames",
     "ESL_SC2",
     "ESL_CSGO",
     "OgamingSC2",
     "cretetion",
     "freecodecamp",
-    "RobotCaleb",
-    "noobs2ninjas",
     "pink_sparkles",
     "medrybw",
     "monstercat",
     "aces_tv",
+    "twitchpresents",
     "loserfruit",
-    "behkuhtv",
-    "food"
+    "behkuhtv"
   ];
 
   var twitchUsersData = [];
@@ -32,6 +34,11 @@ $(document).ready(function() {
   var MAX_INFO = 45; // cut info to 45 words
   var refreshRate = 900000; // refresh every 9 minutes
   var active = 'all';
+
+
+
+
+
 
 /***********************************************************************************************************************
   function to get the info of evry user, store it into an object,
@@ -140,8 +147,12 @@ $(document).ready(function() {
   }
 
 
+
+
+
 /***********************************************************************************************************************
-  function to
+  function to generate all the divs and attach all info to
+  their corresponding div to be displayed.
 ************************************************************************************************************************/
   function showUserData(who) {
 
@@ -155,12 +166,10 @@ $(document).ready(function() {
     html += '</div>'; // end of "infocard aka back image"
 
 
-
     // CHANNEL PAGE LINK surrounding caption to make it all clickable
     if (who.url !== null) {
       html += '<a href="' + who.url + '" target="_blank">';
     }
-
     // caption div
     html += '<div class="caption">';
     // if there is no logo just put an unicorn as logo
@@ -175,28 +184,26 @@ $(document).ready(function() {
     } else {
       streamStatus = 'stream-off';
     }
-
     // LOGO: either live or off class and picture of logo
     html += '<img class="logo ' + streamStatus + '" src="' + userLogo + '" alt="">';
-
     //USERNAME
     var displayName = who.displayName;
     if (who.displayName === undefined) {
       displayName = who.name;
     }
     html += '<h3>' + displayName + '</h3>';
-
-    // GAME INFO
-    if (who.info !== null) {
-      html += '<h4>' + truncate(who.info, MAX_INFO) + '</h4>';
-    }
     // GAME INFO
     var game = "";
     if (who.game !== null) {
       game = who.game;
     }
     if (who.streaming) {
-      html += '<h5>' + game + '&nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ' + who.viewers + '</h5>';
+      html += '<h4>' + game + '&nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> ' + who.viewers + '</h4>';
+    }
+    // GAME INFO
+    if (who.info !== null) {
+      // calls truncate function to cut down the info
+      html += '<hp>' + truncate(who.info, MAX_INFO) + '</hp>';
     }
     html += '</div>';
     html += '</div>';
@@ -204,26 +211,30 @@ $(document).ready(function() {
     html += '</a>';
     html += '</div>';
 
+    // apend info to our results div
     $("#results").append(html);
 
+    // preview attached
     if (who.preview !== null && who.preview !== 'twitch') {
       $('#infocard_' + who.name).css({
         "background-image": 'url(' + who.preview + ')',
-        "background-color": "black"
       });
     }
-
+    // if preview not available set background color to black
     if (who.preview === "twitch") {
       $('#infocard_' + who.name).css(
-        "background-color", "#6441A5"
+        "background-color", "black"
       );
     }
-
-    //$('#infocard_' + who.name).toggle();
-    $('#infocard_' + who.name).addClass('animated fadeIn');
-
   }
 
+
+
+
+
+  /***********************************************************************************************************************
+    function to cut down the info description of current game.
+  ************************************************************************************************************************/
   function truncate(str, num) {
     if (typeof(str) !== 'undefined') {
       if (str.length > num) {
@@ -233,7 +244,13 @@ $(document).ready(function() {
     return str;
   }
 
-  // sorts thumbnails by username in alphabetical name
+
+
+
+
+  /***********************************************************************************************************************
+    function to sort thumbnails by username in alphabetical name
+  ************************************************************************************************************************/
   function sortList(a, b) {
     var nameA = a.name.toLowerCase(),
       nameB = b.name.toLowerCase();
@@ -244,11 +261,22 @@ $(document).ready(function() {
     return 0;
   }
 
+
+
+
+  /***********************************************************************************************************************
+    functions to control navigation tab clicks
+  ************************************************************************************************************************/
+
+
+  // highlights corresponding active nav tav
   $(".btn-group > .btn").click(function() {
     $(".btn-group > .btn").removeClass("active");
     $(this).addClass("active");
   });
 
+
+  // displays all thumbnails after "all" tab is clicked.
   $("#all").click(function() {
     $("#results").empty();
     // calls sort method to sort by alphabetical user name
@@ -258,6 +286,8 @@ $(document).ready(function() {
     });
   });
 
+
+  // displays only users who are streaming after "online" tab is clicked.
   $("#online").click(function() {
     $("#results").empty();
     // calls sort method to sort by alphabetical user name
@@ -269,6 +299,8 @@ $(document).ready(function() {
     });
   });
 
+
+  // displays only users who are offline after "offline" tab is clicked.
   $("#offline").click(function() {
     $("#results").empty();
     // calls sort method to sort by alphabetical user name
@@ -280,10 +312,10 @@ $(document).ready(function() {
     });
   });
 
-
+  // MAIN PROGRAM
   getStatus();
 
-  // update info every 5 mins
+  // update info every 9 mins
   intervalID = setInterval(getStatus, refreshRate);
 
 });
