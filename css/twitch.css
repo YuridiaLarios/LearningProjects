@@ -27,6 +27,7 @@ body {
   font-size: 1.5em;
   color: #fcfafc;
 }
+
 .btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
   font-weight: bold;
   background: #fcfafc;
@@ -57,7 +58,6 @@ body {
     background-size: cover;
 }
 
-
 .caption:hover {
   color: #623973;
   opacity: .7;
@@ -66,8 +66,6 @@ body {
 a:link {
   text-decoration: none;
 }
-
-
 
 /* Avatar logos */
 img.logo {
@@ -79,7 +77,6 @@ img.logo {
     margin: 3.5%;
     margin-bottom: 10%;
 }
-
 
 /* Active or not active logo styles */
 img.stream-on {
@@ -105,7 +102,3 @@ img.stream-off {
   }
 
 }​
-
-
-
-500 767

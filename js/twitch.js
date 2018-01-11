@@ -270,17 +270,16 @@ $(document).ready(function() {
 
 
 
+
   /***********************************************************************************************************************
     functions to control navigation tab clicks
   ************************************************************************************************************************/
-
 
   // highlights corresponding active nav tav
   $(".btn-group > .btn").click(function() {
     $(".btn-group > .btn").removeClass("active");
     $(this).addClass("active");
   });
-
 
   // displays all thumbnails after "all" tab is clicked.
   $("#all").click(function() {
@@ -291,7 +290,6 @@ $(document).ready(function() {
       showUserData(who);
     });
   });
-
 
   // displays only users who are streaming after "online" tab is clicked.
   $("#online").click(function() {
@@ -304,7 +302,6 @@ $(document).ready(function() {
       showUserData(who);
     });
   });
-
 
   // displays only users who are offline after "offline" tab is clicked.
   $("#offline").click(function() {
