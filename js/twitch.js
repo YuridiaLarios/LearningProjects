@@ -145,7 +145,7 @@ $(document).ready(function() {
         console.log(errorThrown.toString());
       });
     });
-  }
+  } // end of getStatus function
 
 
 
@@ -232,7 +232,7 @@ $(document).ready(function() {
         "background-color", "black"
       );
     }
-  }
+  } // end of shouUserData function
 
 
 
@@ -248,7 +248,7 @@ $(document).ready(function() {
       }
     }
     return str;
-  }
+  } // end of truncate function
 
 
 
@@ -265,7 +265,7 @@ $(document).ready(function() {
     if (nameA > nameB)
       return 1;
     return 0;
-  }
+  } // end of sortList function
 
 
 
@@ -320,5 +320,7 @@ $(document).ready(function() {
 
   // update info every 9 mins
   intervalID = setInterval(getStatus, refreshRate);
+  // update current time every 15 seconds
+
 
 });
