@@ -102,3 +102,14 @@ img.stream-off {
   }
 
 }​
+
+
+@media screen (max-width: 400px){
+
+  .thumbnail{
+    height: 510px;
+  }
+  .infocard {
+      height: calc(400/16*10px);
+  }
+}
