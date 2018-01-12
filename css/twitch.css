@@ -1,5 +1,5 @@
 body {
-    background-color: #fcfafc;;
+    background-color: #fcfafc;
     padding: 50px auto;
 }
 
@@ -87,7 +87,29 @@ img.stream-off {
     border-color: #dd3333;
 }
 
-/* No greater than 900px, no less than 400px */
+
+@media screen and (max-width: 400px){
+  .thumbnail{
+    height: 450px;
+  }
+
+  .caption {
+    text-align: center;
+    margin: 0 auto;
+  }
+  /* Avatar logos */
+  img.logo {
+      width: 25%;
+      border-radius: 50%;
+      float: none;
+      margin: 1%;
+      margin-bottom: 1%;
+  }
+
+}
+
+
+/* No greater than 900px, no less than 500px */
 @media (max-width:768px) and (min-width:500px) {
   .inside-container {
     padding: 20px 50px;
@@ -102,18 +124,3 @@ img.stream-off {
   }
 
 }​
-
-
-@media screen (max-width: 400px){
-  .inside-container {
-    padding: 20px 10px;
-    margin: auto 50px;
-  }
-
-  .thumbnail{
-    height: 510px;
-  }
-  .infocard {
-      height: calc(400/16*10px);
-  }
-}
