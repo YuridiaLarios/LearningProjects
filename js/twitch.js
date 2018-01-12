@@ -166,7 +166,7 @@ $(document).ready(function() {
     html += '<div class="infocard stream" id="infocard_' + who.name + '">';
     if (who.streaming) {
       html += '<iframe id="myIframe" class="embed-responsive-item" src="'+ videoLink + who.name +'&data-paused=true&muted=true&autoplay=false&"';
-      html += 'height="100%" width="100%" frameborder="0" scrolling="no"muted="true" allowfullscreen></iframe>';
+      html += 'height="100%" width="100%" frameborder="0" scrolling="no"muted="false" allowfullscreen></iframe>';
     }
     html += '</div>'; // end of "infocard aka back image"
 
