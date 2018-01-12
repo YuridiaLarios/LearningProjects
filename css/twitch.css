@@ -99,21 +99,37 @@ img.stream-off {
   }
   /* Avatar logos */
   img.logo {
-      width: 25%;
-      border-radius: 50%;
       float: none;
       margin: 1%;
       margin-bottom: 1%;
   }
-
 }
 
 
-/* No greater than 900px, no less than 500px */
-@media (max-width:768px) and (min-width:500px) {
+/* No greater than 750px, no less than 768px */
+@media (max-width:767px) and (min-width:509px) {
+
+  .thumbnail{
+    height: 430px;
+    width: 90%;
+    margin-left: 5%;
+  }
+  /* Avatar logos */
+  img.logo {
+      width: 20%;
+      margin: 5%;
+      margin-bottom: 1%;
+  }
+  .infocard {
+      height: calc(400/16*9px);
+  }
+}​
+
+/* No greater than 750px, no less than 768px */
+@media (max-width:768px) {
   .inside-container {
-    padding: 20px 50px;
-    margin: auto 50px;
+    padding: 20px 1%;
+    margin: auto 1%;
   }
 
   .thumbnail{
