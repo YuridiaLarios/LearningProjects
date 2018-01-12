@@ -105,6 +105,10 @@ img.stream-off {
 
 
 @media screen (max-width: 400px){
+  .inside-container {
+    padding: 20px 10px;
+    margin: auto 50px;
+  }
 
   .thumbnail{
     height: 510px;
