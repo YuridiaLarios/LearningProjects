@@ -1,0 +1,42 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int get_height_input(string prompt);
+void  print_right_pyramid(int height);
+
+int main(void)
+{   
+    int height = get_height_input("Enter height:\n");
+    print_right_pyramid(height);
+}
+
+// Prompt user for positive integer between 1 inclusive and 8 inclusive
+int get_height_input(string prompt) {
+    int heightInput;
+    do {
+        heightInput = get_int("Enter height:\n");
+    } while ((heightInput < 1) || (heightInput > 8));
+    return heightInput;
+}
+
+// Print a right-aligned pyramid
+void  print_right_pyramid(int height) {
+    // Chooses a row
+    for (int i = 1; i <= height; i++)
+    {
+        // Chooses a column:
+        for (int j = 0; j < height; j++)
+        {
+            // Prints an hash character or a space character
+            if ( j > height - 1 - i)
+            {
+                printf("#");
+            }
+            else
+            {
+                printf(" ");
+            }         
+        }                       
+        printf("\n");
+    }
+}
