@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+void give_change(int currency);
+float change = 0;
+int cents = 0;
+int used_coins = 0;
+int current_used_coins = 0;
+
+int main(int argc, string argv[])
+{    
+    do 
+    {
+        change = get_float("Change owed: ");
+    } 
+    while (change < 0);
+
+    if (change == 0)
+    {
+        printf("%i\n",used_coins);
+    } else 
+    { 
+        cents = round(change * 100);
+        give_change(25); 
+        give_change(10); 
+        give_change(5);
+        give_change(1);       
+        printf("%i\n", used_coins);   
+   }
+}
+
+void give_change(int currency) 
+{
+    if (cents >= currency) 
+    {
+        current_used_coins = cents / currency;
+        cents = round(cents - (current_used_coins * currency));
+        used_coins += current_used_coins;
+        current_used_coins = 0;
+    }
+}
