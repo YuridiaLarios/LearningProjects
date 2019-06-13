@@ -1,0 +1,84 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h> 
+#include <ctype.h>
+
+// function prototype 
+int shift(char c);
+
+int main(int argc, string argv[])
+{
+    if (argc == 2)
+    {
+        //  Ensure every character of the keyword is alphabetic
+        for (int i = 0; i < strlen(argv[1]); i++)
+        {
+            
+            if (!(argv[1][i] >= 65 && argv[1][i] <= 90) && !(argv[1][i] >= 97 && argv[1][i] <= 122)) 
+            {
+                printf("Usage: ./caesar key\n");
+                return 1;
+            } 
+        }
+        // Ask user for plaintext input
+        string plaintext = get_string("plaintext: ");
+        int alphabet_case;
+        printf("ciphertext: ");
+        
+        // Iterate thru plain text and change each letter character appropiately, keep spaces, symbols and digits.
+        int j = 0;
+        for (int i = 0; i < strlen(plaintext); i++) 
+        {    
+            if ((plaintext[i] >= 'a' && plaintext[i] <= 'z') || (plaintext[i] >= 'A' && plaintext[i] <= 'Z')) 
+            {
+                if (isupper(plaintext[i]))
+                {
+                    alphabet_case = 65;
+                } 
+                else 
+                {
+                    alphabet_case = 97;
+                }
+                int shiftValue = shift(argv[1][j]);
+                int ciphertext = ((plaintext[i] - alphabet_case) + shiftValue) % 26;
+                printf("%c", alphabet_case + ciphertext);
+                if (j == strlen(argv[1]) - 1) 
+                {
+                    j = 0;
+                } 
+                else 
+                {
+                    j++;          
+                }
+            }
+            else 
+            {  
+                printf("%c", plaintext[i]);
+            }
+        }
+        printf("\n");
+    }
+    else
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+}
+
+// function takes a single character as input, and it outputs the shift value for that character.
+int shift(char c)
+{
+    int alphabet_case;
+    if (isupper(c))
+    {
+        alphabet_case = 65;
+    } 
+    else 
+    {
+        alphabet_case = 97;
+    }    
+    int shiftValue = c - alphabet_case;
+    return shiftValue;
+}
+
+
